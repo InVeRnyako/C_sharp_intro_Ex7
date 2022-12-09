@@ -1,7 +1,7 @@
 ﻿// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
 // и возвращает значение этого элемента или же указание, что такого элемента нет.
 
-int [,] array = GenerateArrayWithNumbers(15, 5, 10, 20);
+int [,] array = GenerateArrayWithNumbers(5, 6, 10, 20);
 
 int row = GetIntNatFromUser("Поиск элемента по индексам [x, y]. Введите x: ");
 int col = GetIntNatFromUser($"Поиск элемента по индексам [{row}, y]. Введите y: ");
@@ -13,7 +13,7 @@ GetNumberFromArrayAtPosition(row, col, array);
 void GetNumberFromArrayAtPosition(int row, int col, int[,] array)
 {
     if (row > array.GetLength(0) - 1 || col > array.GetLength(1) - 1)
-        Console.WriteLine("Массив не содержит чисел по заданным индексам.");
+        Console.WriteLine($"Массив не содержит чисел по заданным индексам [{row}, {col}].");
     else
         Console.WriteLine($"[{row} , {col}] -> {array[row, col]}");
 }
